@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Gaurav Diary | Reading{% endblock title %}
+{% block body %}
+<h1 style="text-align: center;"><strong style="color: brown;">Title : </strong>{{pro.title}}</h1>
+<h3 style="text-align: center;"><strong style="color: brown;">Date :</strong> {{pro.date_created}}</h3>
+<div class="container">
+    <h5>CONTENT here👇</h5>
+    <p>{{pro.entry_content}}</p>
+</div>
+{% endblock body %}

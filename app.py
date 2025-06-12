@@ -67,12 +67,18 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        user = User.query.filter_by(username=request.form['username']).first()
-        if user and bcrypt.check_password_hash(user.password, request.form['password']):
+        username = request.form['username']
+        password = request.form['password']
+
+        user = User.query.filter_by(username=username).first()
+
+        if user and bcrypt.check_password_hash(user.password, password):
             login_user(user)
             return redirect('/')
         else:
-            flash('Invalid credentials', 'danger')
+            flash('Invalid username or password. Please try again.', 'danger')
+            return redirect('/login')
+
     return render_template('login.html')
 
 @app.route('/logout')

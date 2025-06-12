@@ -1,2 +1,5 @@
-instance
-__pychache__
+__pycache__/
+*.pyc
+instance/
+*.db
+.env

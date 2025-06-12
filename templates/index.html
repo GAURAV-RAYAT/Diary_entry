@@ -31,6 +31,7 @@
             <tr>
                 <th scope="col">Sno.</th>
                 <th scope="col">Title</th>
+                <th scope="col">Entry</th>
                 <th scope="col">Date and Time</th>
             </tr>
         </thead>
@@ -40,6 +41,7 @@
             <tr>
                 <th scope="row">{{loop.index}}</th>
                 <td>{{pro.title}}</td>
+                <td>{{pro.entry_content}}</td>
                 <td>{{pro.date_created}}</td>
                 <td>
                     <a href="/delete/{{pro.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
